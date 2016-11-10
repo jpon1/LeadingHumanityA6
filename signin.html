@@ -77,21 +77,7 @@
 
 $(document).ready(function () {
   $( "#login" ).click(function() {
-      if (email == '' || pwd == '') {
-        alert("Please fill all fields...!!!!!!");
-        //window.location="signin.html";
-      } else {
-        var email = $("#email").val();
-        var pwd = $("#pwd").val();
-
-        $.getJSON("data.json", function(jsd) {
-                  if (jsd.user[0].username == email && jsd.user[0].password == pwd) {
-                    window.location="home.html";
-                  } else {
-                    alert("invalid username or password");
-                  }
-            });
-      }
+      alert("hello");
   });
 
 });
