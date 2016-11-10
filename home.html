@@ -112,8 +112,10 @@
 
 
 <script>
+//tester
 $.getJSON("data.json", function(jsd) {
-        $('#owner').append(jsd.user[0].username);
+        var uname = jsd.user[0].username.substring(0, jsd.user[0].username.indexOf('u') - 1);
+        $('#owner').append("Hello " + uname);
     });
 </script>
 
