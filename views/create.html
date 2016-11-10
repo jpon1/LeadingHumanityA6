@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link href="https://s3.amazonaws.com/codiqa-cdn/codiqa.ext.css" rel="stylesheet">
+  <link href="https://s3.amazonaws.com/codiqa-cdn/mobile/1.4.2/jquery.mobile-1.4.2.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="https://s3.amazonaws.com/codiqa-cdn/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+  <script src="https://s3.amazonaws.com/codiqa-cdn/codiqa.ext.js"></script>
+
+  <script src="script.js"></script>
+
+</head>
+<body>
+<div data-role="page" data-control-title="analyze" id="page8">
+    <div data-theme="b" data-role="header">
+        <h1 class="ui-title">
+            LEADING HUMANITY
+        </h1>
+    </div>
+    <div role="main" class="ui-content">
+        <div data-controltype="textblock">
+            <h1 data-mce-style="text-align: center;" style="text-align: center;">
+                <span style="font-family: 'comic sans ms', sans-serif; color: rgb(136, 136, 136); background-color: rgb(252, 255, 252);">
+                    <b>
+                        CREATE NEW PROJECT
+                    </b>
+                </span>
+            </h1>
+
+            <h4 data-mce-style="text-align: center;" style="text-align: center;">
+                <span style="font-family: 'comic sans ms', sans-serif; color: rgb(136, 136, 136); background-color: rgb(252, 255, 252);">
+                    <b>
+                        MAKE A NEW PROJECT FOR A NEW SCIENTIFIC QUESTION
+                    </b>
+                </span>
+            </h4>
+        </div>
+
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="textinput1">
+                <b>
+                    Project Name
+                </b>
+            </label>
+            <input name="" id="textinput1" placeholder="" value="" type="text">
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="textinput2">
+                <b>
+                    Topic:
+                </b>
+            </label>
+            <input name="" id="textinput2" placeholder="" value="" type="text">
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="textinput3">
+                <b>
+                    Question:
+                </b>
+            </label>
+            <input name="" id="textinput3" placeholder="" value="" type="text">
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="textinput4">
+                <b>
+                    Hypothesis:
+                </b>
+            </label>
+            <input name="" id="textinput4" placeholder="" value="" type="text">
+        </div>
+
+        <div class="ui-field-contain" data-controltype="textinput">
+             <label for="textinput5">
+                 <b>
+                     Form URL:
+                 </b>
+             </label>
+             <input name="" id="textinput5" placeholder="" value="" type="text">
+         </div>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a onclick="window.location.href='home.html'" data-transition="fade" data-theme="" data-icon="">
+                            GO BACK
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="window.location.href='myprojects.html'" data-transition="fade" data-theme="" data-icon="">
+                            CREATE
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</div>
+</body>
+
+<script>
+
+    $(function () {
+        $("#task1").hide();
+        $("#task1status").hide();
+        $("#task2").hide();
+        $("#task2status").hide();
+        $("#task3").show();
+        $("#task3status").show();
+        $("#task4").show();
+        $("#task4status").show();
+    });
+
+    $(document).ready(function () {
+        $("#nextSet").click(function () {
+            $("#task1").show();
+            $("#task1status").show();
+            $("#task2").show();
+            $("#task2status").show();
+            $("#task3").hide();
+            $("#task3status").hide();
+            $("#task4").hide();
+            $("#task4status").hide();
+            $("html,body").scrollTop(0);
+            $("input[type='radio']").attr("checked", false).checkboxradio("refresh");
+        });
+    });
+
+    $.getJSON("data.json", function (jsd) {
+        $('#task1').append(jsd.tasks[0].name + '<br>' + jsd.tasks[0].startTime + ' - ' + jsd.tasks[0].endTime);
+    });
+    $.getJSON("data.json", function (jsd) {
+        $('#task1status').append(jsd.tasks[0].status);
+    });
+    $.getJSON("data.json", function (jsd) {
+        $('#task2').append(jsd.tasks[1].name + '<br>' + jsd.tasks[1].startTime + ' - ' + jsd.tasks[1].endTime);
+    });
+    $.getJSON("data.json", function (jsd) {
+        $('#task2status').append(jsd.tasks[1].status);
+    });
+    $.getJSON("data.json", function (jsd) {
+        $('#task3').append(jsd.tasks[2].name + '<br>' + jsd.tasks[2].startTime + ' - ' + jsd.tasks[2].endTime);
+    });
+    $.getJSON("data.json", function (jsd) {
+        $('#task3status').append(jsd.tasks[2].status);
+    });
+    $.getJSON("data.json", function (jsd) {
+        $('#task4').append(jsd.tasks[3].name + '<br>' + jsd.tasks[3].startTime + ' - ' + jsd.tasks[3].endTime);
+    });
+    $.getJSON("data.json", function (jsd) {
+        $('#task4status').append(jsd.tasks[3].status);
+    });
+
+</script>
+
+</html>
