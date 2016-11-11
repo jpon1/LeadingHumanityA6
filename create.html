@@ -80,7 +80,13 @@
 
         <div data-controltype="textblock" style="text-align: center">
             <p>
-                *Important: Please make a <a href="https://docs.google.com/forms/" target="_blank">Google Form</a> and paste the embedded html code*
+                <b>
+                    Create A Survey For This Project
+                </b>
+                  
+            </p>
+            <p>
+                Please make a <a href="https://docs.google.com/forms/" target="_blank">Google Form</a>, go to "SEND" then "<>" and copy and paste the "Embed HTML" code.
             </p>
         </div>
         <div class="ui-field-contain" data-controltype="textinput">
@@ -88,11 +94,24 @@
                  <b>
                      Google Form Embedded HTML Code:
                  </b>
+                 <br>
+                 <br/>
              </label>
              <input name="" id="textinput5" placeholder="" value="" type="text">
          </div>
+
+        <div id="projName" style="text-align:center; font-weight: bold; font-size:24px">
+        </div>
+        <div id="topicName" style="text-align:center; font-weight: bold; font-size:24px">
+        </div>
+        <div id="questName" style="text-align:center; font-weight: bold; font-size: 24px">
+        </div>
+        <div id="hypName" style="text-align:center; font-weight: bold; font-size: 24px">
+        </div>
         <div id="preview">
         </div>
+
+
             <div data-role="navbar" data-iconpos="top">
                 <ul>
                     <li>
@@ -102,12 +121,12 @@
                     </li>
                     <li>
                         <a id="previewbutton" data-transition="fade" data-theme="" data-icon="">
-                            PREVIEW FORM
+                            PREVIEW PROJECT
                         </a>
                     </li>
                     <li>
                         <a id="createbutton" data-transition="fade" data-theme="" data-icon="">
-                            CREATE
+                            CREATE PROJECT
                         </a>
                     </li>
                 </ul>
@@ -134,7 +153,15 @@ $(document).ready(function () {
     });
 
     $("#previewbutton").click(function () {
+        var pName = $('#textinput1').val();
+        var tName = $('#textinput2').val();
+        var qName = $('#textinput3').val();
+        var hName = $('#textinput4').val();
         var gForm = $('#textinput5').val();
+        $('#projName').html(pName);
+        $('#topicName').html(tName);
+        $('#questName').html(qName);
+        $('#hypName').html(hName);
         $('#preview').html(gForm);
     });
 });
