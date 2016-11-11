@@ -119,10 +119,14 @@ $(document).ready(function () {
       var d = $('#textinput4').val();
       var e = $('#textinput5').val();
 
-      func1(a,b,c,d,e);
-
-      alert(getQuestion());
-
+      if (a !='' && b !='' && c !='' && d !='' && e !='') {
+        func1(a,b,c,d,e);
+        localStorage.setItem("projectName",a);
+        alert("Your project is successfully created!");
+        window.location="home.html";
+      } else {
+        alert("Please fill all fields...!!!");
+      }
 
     });
 });

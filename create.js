@@ -1,36 +1,20 @@
 
-var array1 = [];
-var pName;
+var projectName;
 var topic;
 var quest;
 var hypo;
 var url;
+var object = new Object();
+
 
 function func1(a,b,c,d,e) {
 
-    pName = a;
+    projectName = a;
     topic = b;
     ques = c;
     hypo = d;
     url = e;
+
+
 };
-
-function getProjectName() {
-  return pName;
-}
-
-function getTopicName() {
-  return topic;
-}
-
-function getQuestion() {
-  return ques;
-}
-
-function getHypo() {
-  return hypo;
-}
-
-function getUrl() {
-  return url;
-}
+window.globalVar = projectName;
