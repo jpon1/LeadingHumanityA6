@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -39,7 +39,7 @@
             <h4 data-mce-style="text-align: center;" style="text-align: center;">
                 <span style="font-family: 'comic sans ms', sans-serif; color: rgb(136, 136, 136); background-color: rgb(252, 255, 252);">
                     <b>
-                        CONTRIBUTE DATA FROM YOUR   PERSONAL EXPERIENCE
+                        CONTRIBUTE DATA FROM YOUR PERSONAL EXPERIENCE
                     </b>
                 </span>
             </h4>
@@ -70,43 +70,6 @@
                 Social Inequality
             </p>
         </div>
-        <div data-controltype="textblock">
-            <p id="task1" style="text-align:left;">
-            </p>
-        </div>
-        <div data-controltype="textblock">
-            <p id="task1status"style="text-align: right;" data-mce-style="text-align: right;">
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            </p>
-        </div>
-        <div id="task2" data-controltype="textblock">
-            <p>
-            </p>
-        </div>
-        <div data-controltype="textblock">
-            <p id="task2status"style="text-align: right;" data-mce-style="text-align: right;">
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            </p>
-        </div>
-        <div data-controltype="textblock">
-            <p id="task3" style="text-align:left;">
-            </p>
-        </div>
-        <div data-controltype="textblock">
-            <p id="task3status" style="text-align: right;" data-mce-style="text-align: right;">
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            </p>
-        </div>
-        <div data-controltype="textblock">
-            <p id="task4" style="text-align:left;">
-            </p>
-        </div>
-        <div data-controltype="textblock">
-            <p id="task4status" style="text-align: right;" data-mce-style="text-align: right;">
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            </p>
-        </div>
-
             <div id="form1" class="ui-field-contain">
                 <fieldset data-role="controlgroup" data-type="horizontal">
                     <legend>
@@ -127,21 +90,6 @@
                     <input type="radio" name="state1" id="choice4" value="can be improved">
                     <label for="choice5">Not At All</label>
                     <input type="radio" name="state1" id="choice5" value="notworking">
-
-                    <!--
-                                <input id="checkbox4" name="" type="checkbox">
-                                <label for="checkbox4">
-                                    Pattern 1
-                                </label>
-                                <input id="checkbox5" name="" type="checkbox">
-                                <label for="checkbox5">
-                                    Pattern 2
-                                </label>
-                                <input id="checkbox6" name="" type="checkbox">
-                                <label for="checkbox6">
-                                    Pattern 3
-                                </label>
-                -->
                 </fieldset>
 
                 <fieldset data-role="controlgroup" data-type="horizontal">
@@ -211,12 +159,12 @@
                 <ul>
                     <li>
                         <a onclick="window.location.href='home.html'" data-transition="fade" data-theme="" data-icon="">
-                            GO BACK
+                            QUIT
                         </a>
                     </li>
                     <li>
                          <a onclick="window.location.href='contribute.html'" data-transition="fade" data-theme="" data-icon="">
-                            SUBMIT
+                            SUBMIT AND GO TO NEXT PROJECT
                         </a>
                     </li>
                 </ul>
@@ -226,58 +174,10 @@
 </body>
 
 <script>
-
-    $(function () {
-        $("#task1").hide();
-        $("#task1status").hide();
-        $("#task2").hide();
-        $("#task2status").hide();
-        $("#task3").show();
-        $("#task3status").show();
-        $("#task4").show();
-        $("#task4status").show();
-    });
-
     $(document).ready(function () {
         $("#nextSet").click(function () {
-            $("#task1").show();
-            $("#task1status").show();
-            $("#task2").show();
-            $("#task2status").show();
-            $("#task3").hide();
-            $("#task3status").hide();
-            $("#task4").hide();
-            $("#task4status").hide();
-            $("html,body").scrollTop(0);
-            $("input[type='radio']").attr("checked", false).checkboxradio("refresh");
         });
     });
-
-    $.getJSON("data.json", function (jsd) {
-        $('#task1').append(jsd.tasks[0].name + '<br>' + jsd.tasks[0].startTime + ' - ' + jsd.tasks[0].endTime);
-    });
-    $.getJSON("data.json", function (jsd) {
-        $('#task1status').append(jsd.tasks[0].status);
-    });
-    $.getJSON("data.json", function (jsd) {
-        $('#task2').append(jsd.tasks[1].name + '<br>' + jsd.tasks[1].startTime + ' - ' + jsd.tasks[1].endTime);
-    });
-    $.getJSON("data.json", function (jsd) {
-        $('#task2status').append(jsd.tasks[1].status);
-    });
-    $.getJSON("data.json", function (jsd) {
-        $('#task3').append(jsd.tasks[2].name + '<br>' + jsd.tasks[2].startTime + ' - ' + jsd.tasks[2].endTime);
-    });
-    $.getJSON("data.json", function (jsd) {
-        $('#task3status').append(jsd.tasks[2].status);
-    });
-    $.getJSON("data.json", function (jsd) {
-        $('#task4').append(jsd.tasks[3].name + '<br>' + jsd.tasks[3].startTime + ' - ' + jsd.tasks[3].endTime);
-    });
-    $.getJSON("data.json", function (jsd) {
-        $('#task4status').append(jsd.tasks[3].status);
-    });
-
 </script>
 
 </html>

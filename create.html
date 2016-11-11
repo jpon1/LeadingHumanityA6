@@ -91,11 +91,18 @@
              </label>
              <input name="" id="textinput5" placeholder="" value="" type="text">
          </div>
+        <div id="preview">
+        </div>
             <div data-role="navbar" data-iconpos="top">
                 <ul>
                     <li>
                         <a onclick="window.location.href='home.html'" data-transition="fade" data-theme="" data-icon="">
                             CANCEL
+                        </a>
+                    </li>
+                    <li>
+                        <a id="previewbutton" data-transition="fade" data-theme="" data-icon="">
+                            PREVIEW FORM
                         </a>
                     </li>
                     <li>
@@ -124,6 +131,11 @@ $(document).ready(function () {
       alert(getQuestion());
 
 
+    });
+
+    $("#previewbutton").click(function () {
+        var gForm = $('#textinput5').val();
+        $('#preview').html(gForm);
     });
 });
 
