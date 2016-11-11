@@ -16,7 +16,7 @@
   <script src="https://s3.amazonaws.com/codiqa-cdn/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
   <script src="https://s3.amazonaws.com/codiqa-cdn/codiqa.ext.js"></script>
 
-  <script src="script.js"></script>
+  <script type='text/javascript' src="create.js"></script>
 
 </head>
 <body>
@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li>
-                        <a onclick="window.location.href='myprojects.html'" data-transition="fade" data-theme="" data-icon="">
+                        <a id="createbutton" data-transition="fade" data-theme="" data-icon="">
                             CREATE
                         </a>
                     </li>
@@ -102,15 +102,29 @@
             </div>
         </div>
 </div>
-</body>
 
 <script>
+$(document).ready(function () {
+    $("#createbutton").click(function () {
 
-    $(document).ready(function () {
-        $("#nextSet").click(function () {
-        });
+      var a = $('#textinput1').val();
+      var b = $('#textinput2').val();
+      var c = $('#textinput3').val();
+      var d = $('#textinput4').val();
+      var e = $('#textinput5').val();
+
+      func1(a,b,c,d,e);
+
+      alert(getQuestion());
+
+
     });
+});
 
 </script>
+
+</body>
+
+
 
 </html>
